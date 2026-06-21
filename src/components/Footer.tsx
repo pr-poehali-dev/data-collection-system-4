@@ -7,9 +7,9 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-semibold">Horizon Voyages</h3>
+            <h3 className="text-2xl font-semibold">Horizon Travel</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Создаём незабываемые путешествия по всему миру с 2010 года
+              Авиабилеты, отели и туры в одном сервисе — путешествуйте легко с 2010 года
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -27,33 +27,33 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Destinations */}
+          {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Направления</h4>
+            <h4 className="font-semibold mb-4">Сервисы</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Европа
+                <a href="#flights" className="hover:text-foreground transition-colors">
+                  Авиабилеты
+                </a>
+              </li>
+              <li>
+                <a href="#hotels" className="hover:text-foreground transition-colors">
+                  Отели
+                </a>
+              </li>
+              <li>
+                <a href="#packages" className="hover:text-foreground transition-colors">
+                  Туры
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-foreground transition-colors">
-                  Азия
+                  Бронь номеров
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-foreground transition-colors">
-                  Африка
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Америка
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Океания
+                  Выбор мест в самолёте
                 </a>
               </li>
             </ul>
@@ -126,7 +126,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>2025 Horizon Voyages. Все права защищены.</p>
+          <p>2025 Horizon Travel. Все права защищены.</p>
         </div>
       </div>
     </footer>

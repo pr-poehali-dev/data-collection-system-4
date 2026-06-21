@@ -24,22 +24,22 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-semibold tracking-tight">Horizon Voyages</h1>
+            <h1 className="text-2xl font-semibold tracking-tight">Horizon Travel</h1>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-12">
             <a
-              href="#destinations"
+              href="#flights"
               className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
             >
-              Направления
+              Авиабилеты
             </a>
             <a
-              href="#packages"
+              href="#hotels"
               className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
             >
-              Туры
+              Отели
             </a>
             <a href="#about" className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
               О нас
@@ -70,11 +70,11 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-border">
           <div className="px-6 py-6 space-y-4">
-            <a href="#destinations" className="block text-base font-medium text-foreground/70 hover:text-foreground">
-              Направления
+            <a href="#flights" className="block text-base font-medium text-foreground/70 hover:text-foreground">
+              Авиабилеты
             </a>
-            <a href="#packages" className="block text-base font-medium text-foreground/70 hover:text-foreground">
-              Туры
+            <a href="#hotels" className="block text-base font-medium text-foreground/70 hover:text-foreground">
+              Отели
             </a>
             <a href="#about" className="block text-base font-medium text-foreground/70 hover:text-foreground">
               О нас
