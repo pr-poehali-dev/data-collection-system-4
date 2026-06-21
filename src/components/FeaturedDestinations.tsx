@@ -1,144 +1,112 @@
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Icon from "@/components/ui/icon"
-
 const flights = [
   {
     from: "Москва",
     to: "Дубай",
-    country: "ОАЭ",
+    country: "ОАЭ 🇦🇪",
     image: "/dubai-modern-skyline-luxury-desert.jpg",
     duration: "5 ч 30 мин",
-    classes: ["Эконом", "Средний", "Бизнес"],
+    classes: ["Эконом", "Бизнес-лайт", "Бизнес"],
     price: "от 24 900 ₽",
   },
   {
     from: "Санкт-Петербург",
     to: "Бали",
-    country: "Индонезия",
+    country: "Индонезия 🇮🇩",
     image: "/bali-indonesia-rice-terraces-tropical-paradise.jpg",
     duration: "13 ч 10 мин",
-    classes: ["Эконом", "Средний", "Бизнес"],
+    classes: ["Эконом", "Бизнес-лайт", "Бизнес"],
     price: "от 48 900 ₽",
   },
   {
     from: "Минск",
     to: "Санторини",
-    country: "Греция",
+    country: "Греция 🇬🇷",
     image: "/santorini-sunset.png",
     duration: "4 ч 05 мин",
-    classes: ["Эконом", "Средний", "Бизнес"],
+    classes: ["Эконом", "Бизнес-лайт", "Бизнес"],
     price: "от 19 900 ₽",
   },
   {
     from: "Варшава",
-    to: "Киото",
-    country: "Япония",
+    to: "Токио",
+    country: "Япония 🇯🇵",
     image: "/kyoto-japan-traditional-temples-cherry-blossoms.jpg",
     duration: "12 ч 40 мин",
-    classes: ["Эконом", "Средний", "Бизнес"],
+    classes: ["Эконом", "Бизнес-лайт", "Бизнес"],
     price: "от 52 900 ₽",
   },
   {
     from: "Брест",
     to: "Мальдивы",
-    country: "Индийский океан",
+    country: "Мальдивы 🇲🇻",
     image: "/maldives-overwater-bungalows-crystal-clear-water.jpg",
     duration: "11 ч 20 мин",
-    classes: ["Эконом", "Средний", "Бизнес"],
+    classes: ["Эконом", "Бизнес-лайт", "Бизнес"],
     price: "от 56 900 ₽",
   },
   {
     from: "Москва",
     to: "Рейкьявик",
-    country: "Исландия",
+    country: "Исландия 🇮🇸",
     image: "/iceland-northern-lights-waterfalls-dramatic-landsc.jpg",
     duration: "6 ч 15 мин",
-    classes: ["Эконом", "Средний", "Бизнес"],
+    classes: ["Эконом", "Бизнес-лайт", "Бизнес"],
     price: "от 31 900 ₽",
   },
 ]
 
 export function FeaturedDestinations() {
   return (
-    <section id="flights" className="py-32 bg-background">
+    <section id="flights" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
-            Авиабилеты <span className="font-semibold">по всему миру</span>
-          </h2>
-          <p className="text-lg text-muted-foreground text-balance leading-relaxed">
-            Вылеты из Москвы, Санкт-Петербурга, Минска, Варшавы и Бреста. Выбирайте маршрут, класс и место в самолёте
+        <div className="mb-16">
+          <p className="text-blue-600 font-semibold text-sm tracking-widest uppercase mb-3">Авиабилеты</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Рейсы по всему миру</h2>
+          <p className="text-lg text-gray-500 max-w-2xl">
+            Вылеты из Москвы, СПб, Минска, Варшавы и Бреста — выбирайте маршрут, класс и место в самолёте
           </p>
         </div>
 
-        {/* Flights Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {flights.map((flight, index) => (
-            <Card
-              key={index}
-              className="group overflow-hidden border-0 bg-card hover:shadow-2xl transition-all duration-500 cursor-pointer"
-            >
-              {/* Image */}
-              <div className="relative h-72 overflow-hidden">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {flights.map((flight, i) => (
+            <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group">
+              <div className="relative h-52 overflow-hidden">
                 <img
-                  src={flight.image || "/placeholder.svg"}
+                  src={flight.image}
                   alt={flight.to}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
-
-                {/* Route Badge */}
-                <div className="absolute top-4 left-4 flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                  <span className="text-xs font-medium">{flight.from}</span>
-                  <Icon name="Plane" className="h-3.5 w-3.5 text-primary" size={14} />
-                  <span className="text-xs font-medium">{flight.to}</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full text-gray-800">
+                  ✈️ {flight.from} → {flight.to}
                 </div>
-
-                {/* Duration Badge */}
-                <div className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                  <Icon name="Clock" className="h-3.5 w-3.5 text-primary" size={14} />
-                  <span className="text-xs font-medium">{flight.duration}</span>
+                <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm text-xs font-medium px-3 py-1.5 rounded-full text-gray-700">
+                  🕐 {flight.duration}
                 </div>
               </div>
-
-              {/* Content */}
-              <div className="p-6 space-y-4">
-                <div>
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-1">
-                    <Icon name="MapPin" className="h-3.5 w-3.5" size={14} />
-                    <span>{flight.country}</span>
-                  </div>
-                  <h3 className="text-2xl font-semibold">{flight.to}</h3>
-                </div>
-
-                {/* Classes */}
-                <div className="flex flex-wrap gap-2">
-                  {flight.classes.map((cls, i) => (
-                    <span key={i} className="text-xs px-3 py-1 bg-muted rounded-full">
-                      {cls}
-                    </span>
+              <div className="p-5">
+                <p className="text-xs text-gray-400 mb-1">{flight.country}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{flight.to}</h3>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {flight.classes.map((cls, j) => (
+                    <span key={j} className="text-xs bg-blue-50 text-blue-700 font-medium px-3 py-1 rounded-full">{cls}</span>
                   ))}
                 </div>
-
-                <div className="flex items-center justify-between pt-4 border-t border-border">
-                  <span className="text-sm font-semibold text-primary">{flight.price}</span>
-                  <Button variant="ghost" size="sm" className="group/btn text-foreground hover:text-primary">
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <span className="text-blue-700 font-bold text-base">{flight.price}</span>
+                  <button className="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full transition-colors">
                     Выбрать место
-                    <Icon name="ArrowRight" className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" size={16} />
-                  </Button>
+                  </button>
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
 
-        {/* View All Button */}
-        <div className="text-center mt-16">
-          <Button variant="outline" size="lg" className="rounded-full px-8 border-2 bg-transparent">
+        <div className="text-center mt-12">
+          <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-8 py-3 rounded-full transition-colors">
             Все направления
-          </Button>
+          </button>
         </div>
       </div>
     </section>

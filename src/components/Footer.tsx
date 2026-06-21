@@ -1,132 +1,45 @@
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react"
-
 export function Footer() {
   return (
-    <footer id="contact" className="bg-background border-t border-border">
+    <footer id="contact" className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-semibold">Horizon Travel</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Авиабилеты, отели и туры в одном сервисе — путешествуйте легко с 2010 года
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-3">Horizon Travel</h3>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Авиабилеты, отели и туры в одном сервисе. Путешествуйте с нами с 2010 года.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Youtube className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
-          {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Сервисы</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a href="#flights" className="hover:text-foreground transition-colors">
-                  Авиабилеты
-                </a>
-              </li>
-              <li>
-                <a href="#hotels" className="hover:text-foreground transition-colors">
-                  Отели
-                </a>
-              </li>
-              <li>
-                <a href="#packages" className="hover:text-foreground transition-colors">
-                  Туры
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Бронь номеров
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Выбор мест в самолёте
-                </a>
-              </li>
+            <h4 className="font-semibold text-white mb-4">Сервисы</h4>
+            <ul className="space-y-3 text-sm">
+              {["Авиабилеты","Бронирование отелей","Выбор места в самолёте","Туры и пакеты"].map((item) => (
+                <li key={item}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
+              ))}
             </ul>
           </div>
 
-          {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Компания</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  О нас
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Вакансии
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Пресса
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Блог
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Партнёры
-                </a>
-              </li>
+            <h4 className="font-semibold text-white mb-4">Компания</h4>
+            <ul className="space-y-3 text-sm">
+              {["О нас","Вакансии","Блог","Партнёры"].map((item) => (
+                <li key={item}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
+              ))}
             </ul>
           </div>
 
-          {/* Support */}
           <div>
-            <h4 className="font-semibold mb-4">Поддержка</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Центр помощи
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Связаться с нами
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Политика конфиденциальности
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Условия использования
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-foreground transition-colors">
-                  Правила отмены
-                </a>
-              </li>
+            <h4 className="font-semibold text-white mb-4">Поддержка</h4>
+            <ul className="space-y-3 text-sm">
+              {["Центр помощи","Связаться с нами","Правила отмены","Политика конфиденциальности"].map((item) => (
+                <li key={item}><a href="#" className="hover:text-white transition-colors">{item}</a></li>
+              ))}
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>2025 Horizon Travel. Все права защищены.</p>
+        <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+          © 2025 Horizon Travel. Все права защищены.
         </div>
       </div>
     </footer>

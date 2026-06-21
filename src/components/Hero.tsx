@@ -1,57 +1,46 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-muted/30 to-background">
-      {/* Background Image */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           src="/stunning-tropical-beach-paradise-with-crystal-clea.jpg"
-          alt="Райское направление"
-          className="w-full h-full object-cover opacity-20"
+          alt="Путешествие"
+          className="w-full h-full object-cover"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center py-32">
-        <div className="space-y-8">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-balance">
-            Авиабилеты, отели
-            <span className="block font-semibold mt-2">и туры в одном месте</span>
-          </h1>
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white py-32">
+        <p className="text-blue-300 font-semibold text-sm tracking-widest uppercase mb-4">Ваш надёжный сервис бронирования</p>
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+          Авиабилеты, отели<br />
+          <span className="text-blue-400">и туры в одном месте</span>
+        </h1>
+        <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Вылеты из Москвы, Минска, Варшавы, Санкт-Петербурга и Бреста. Выбирайте класс, бронируйте место и отель — всё онлайн.
+        </p>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
-            Бронируйте перелёты с выбором места и класса, отели с рейтингами и отзывами — всё для идеального путешествия
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 h-14 text-base group"
-            >
-              Найти авиабилет
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 bg-transparent">
-              Подобрать отель
-            </Button>
-          </div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#flights" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors">
+            ✈️ Найти авиабилет
+          </a>
+          <a href="#hotels" className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-full text-base border border-white/40 transition-colors">
+            🏨 Подобрать отель
+          </a>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-8 md:gap-16 max-w-3xl mx-auto mt-24 pt-16 border-t border-border/50">
-          <div className="space-y-2">
-            <div className="text-4xl md:text-5xl font-light">500+</div>
-            <div className="text-sm text-muted-foreground">Авиамаршрутов</div>
+        <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-20 pt-10 border-t border-white/20">
+          <div>
+            <div className="text-4xl font-bold">500+</div>
+            <div className="text-sm text-gray-300 mt-1">Авиамаршрутов</div>
           </div>
-          <div className="space-y-2">
-            <div className="text-4xl md:text-5xl font-light">10 000+</div>
-            <div className="text-sm text-muted-foreground">Отелей в каталоге</div>
+          <div>
+            <div className="text-4xl font-bold">10 000+</div>
+            <div className="text-sm text-gray-300 mt-1">Отелей в каталоге</div>
           </div>
-          <div className="space-y-2">
-            <div className="text-4xl md:text-5xl font-light">4.9</div>
-            <div className="text-sm text-muted-foreground">Средний рейтинг</div>
+          <div>
+            <div className="text-4xl font-bold">4.9 ★</div>
+            <div className="text-sm text-gray-300 mt-1">Средний рейтинг</div>
           </div>
         </div>
       </div>

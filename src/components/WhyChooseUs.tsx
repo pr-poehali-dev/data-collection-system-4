@@ -1,51 +1,44 @@
-import Icon from "@/components/ui/icon"
-
 const features = [
   {
-    icon: "Plane",
+    icon: "✈️",
     title: "Авиабилеты онлайн",
-    description: "Вылеты из Москвы, СПб, Минска, Варшавы и Бреста с выбором места и класса в самолёте",
+    description: "Вылеты из Москвы, СПб, Минска, Варшавы и Бреста. Выбирайте класс и место в самолёте.",
   },
   {
-    icon: "Bed",
+    icon: "🏨",
     title: "Отели с отзывами",
-    description: "Реальные рейтинги, меню ресторанов и подробное описание каждого номера",
+    description: "Реальные рейтинги, меню ресторанов и подробное описание каждого номера.",
   },
   {
-    icon: "Shield",
+    icon: "🔒",
     title: "Безопасное бронирование",
-    description: "Защищённые платежи и подтверждение брони сразу после оплаты",
+    description: "Защищённые платежи и подтверждение брони сразу после оплаты.",
   },
   {
-    icon: "Headphones",
+    icon: "🎧",
     title: "Поддержка 24/7",
-    description: "Круглосуточная помощь до, во время и после вашей поездки",
+    description: "Круглосуточная помощь до, во время и после вашей поездки.",
   },
 ]
 
 export function WhyChooseUs() {
   return (
-    <section id="about" className="py-32 bg-muted/30">
+    <section id="why" className="py-24 bg-blue-700">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
-            Почему выбирают <span className="font-semibold">Horizon Travel</span>
-          </h2>
-          <p className="text-lg text-muted-foreground text-balance leading-relaxed">
-            Авиабилеты, отели и туры в одном сервисе — бронируйте всё для путешествия за пару кликов
+        <div className="text-center mb-16">
+          <p className="text-blue-200 font-semibold text-sm tracking-widest uppercase mb-3">Почему мы</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Почему выбирают Horizon Travel</h2>
+          <p className="text-lg text-blue-200 max-w-2xl mx-auto">
+            Авиабилеты, отели и туры в одном сервисе — бронируйте всё за пару кликов
           </p>
         </div>
 
-        {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <div key={index} className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-2">
-                <Icon name={feature.icon} className="h-8 w-8" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+          {features.map((f, i) => (
+            <div key={i} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-colors">
+              <div className="text-5xl mb-4">{f.icon}</div>
+              <h3 className="text-lg font-bold text-white mb-3">{f.title}</h3>
+              <p className="text-sm text-blue-200 leading-relaxed">{f.description}</p>
             </div>
           ))}
         </div>

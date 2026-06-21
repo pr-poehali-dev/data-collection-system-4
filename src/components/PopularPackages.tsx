@@ -1,13 +1,9 @@
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Icon from "@/components/ui/icon"
-
 const hotels = [
   {
     name: "Azure Palm Resort",
     location: "Дубай, ОАЭ",
-    rating: "4.9",
-    reviews: "1 248",
+    rating: 4.9,
+    reviews: 1248,
     image: "/dubai-modern-skyline-luxury-desert.jpg",
     room: "Делюкс с видом на море, 42 м²",
     menu: ["Шведский стол", "Авторская кухня", "Завтрак включён"],
@@ -16,8 +12,8 @@ const hotels = [
   {
     name: "Tropical Pearl Villas",
     location: "Бали, Индонезия",
-    rating: "4.8",
-    reviews: "986",
+    rating: 4.8,
+    reviews: 986,
     image: "/bali-indonesia-rice-terraces-tropical-paradise.jpg",
     room: "Вилла с бассейном, 65 м²",
     menu: ["Балийская кухня", "Веган-меню", "All Inclusive"],
@@ -26,8 +22,8 @@ const hotels = [
   {
     name: "Santorini Sky Suites",
     location: "Санторини, Греция",
-    rating: "5.0",
-    reviews: "742",
+    rating: 5.0,
+    reviews: 742,
     image: "/santorini-sunset.png",
     room: "Люкс с видом на закат, 38 м²",
     menu: ["Средиземноморская", "Морепродукты", "Завтрак включён"],
@@ -37,80 +33,55 @@ const hotels = [
 
 export function PopularPackages() {
   return (
-    <section id="hotels" className="py-32 bg-background">
+    <section id="hotels" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
-            Отели с <span className="font-semibold">рейтингами и отзывами</span>
-          </h2>
-          <p className="text-lg text-muted-foreground text-balance leading-relaxed">
-            Подробности о номерах, меню ресторанов и реальные отзывы гостей — выбирайте и бронируйте онлайн
+        <div className="mb-16">
+          <p className="text-blue-600 font-semibold text-sm tracking-widest uppercase mb-3">Отели</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Лучшие отели с рейтингами</h2>
+          <p className="text-lg text-gray-500 max-w-2xl">
+            Реальные отзывы, описание номеров и меню ресторанов — бронируйте онлайн за пару кликов
           </p>
         </div>
 
-        {/* Hotels Grid */}
         <div className="grid lg:grid-cols-3 gap-8">
-          {hotels.map((hotel, index) => (
-            <Card
-              key={index}
-              className="group overflow-hidden border-0 bg-card hover:shadow-2xl transition-all duration-500"
-            >
-              {/* Image */}
-              <div className="relative h-64 overflow-hidden">
+          {hotels.map((hotel, i) => (
+            <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-shadow duration-300 group border border-gray-100">
+              <div className="relative h-60 overflow-hidden">
                 <img
-                  src={hotel.image || "/placeholder.svg"}
+                  src={hotel.image}
                   alt={hotel.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
-
-                {/* Rating Badge */}
-                <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                  <Icon name="Star" className="h-3.5 w-3.5 fill-primary text-primary" size={14} />
-                  <span className="text-xs font-semibold">{hotel.rating}</span>
-                  <span className="text-xs text-muted-foreground">({hotel.reviews})</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm text-xs font-bold px-3 py-1.5 rounded-full text-gray-800">
+                  ⭐ {hotel.rating} <span className="font-normal text-gray-500">({hotel.reviews})</span>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-6 space-y-6">
-                <div>
-                  <div className="flex items-center gap-1.5 text-sm text-muted-foreground mb-2">
-                    <Icon name="MapPin" className="h-4 w-4" size={16} />
-                    <span>{hotel.location}</span>
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-4">{hotel.name}</h3>
+              <div className="p-6">
+                <p className="text-xs text-gray-400 mb-1">📍 {hotel.location}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{hotel.name}</h3>
+                <p className="text-sm text-gray-500 mb-4">🛏 {hotel.room}</p>
 
-                  {/* Room Info */}
-                  <div className="flex items-center gap-1.5 text-sm text-muted-foreground mb-4">
-                    <Icon name="Bed" className="h-4 w-4" size={16} />
-                    <span>{hotel.room}</span>
-                  </div>
-
-                  {/* Menu / Meals */}
-                  <div className="flex flex-wrap gap-2">
-                    {hotel.menu.map((item, i) => (
-                      <span key={i} className="text-xs px-3 py-1 bg-muted rounded-full flex items-center gap-1">
-                        <Icon name="Utensils" className="h-3 w-3" size={12} />
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {hotel.menu.map((item, j) => (
+                    <span key={j} className="text-xs bg-orange-50 text-orange-700 font-medium px-3 py-1 rounded-full">
+                      🍽 {item}
+                    </span>
+                  ))}
                 </div>
 
-                {/* Price & CTA */}
-                <div className="flex items-center justify-between pt-6 border-t border-border">
+                <div className="flex items-center justify-between pt-5 border-t border-gray-100">
                   <div>
-                    <div className="text-xs text-muted-foreground mb-1">Стоимость</div>
-                    <div className="text-2xl font-semibold text-primary">{hotel.price}</div>
+                    <p className="text-xs text-gray-400 mb-0.5">Стоимость</p>
+                    <p className="text-xl font-bold text-blue-700">{hotel.price}</p>
                   </div>
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">
                     Забронировать
-                  </Button>
+                  </button>
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
