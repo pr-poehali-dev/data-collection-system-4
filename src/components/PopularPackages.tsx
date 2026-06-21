@@ -84,7 +84,7 @@ export function PopularPackages() {
 
                   {/* Room Info */}
                   <div className="flex items-center gap-1.5 text-sm text-muted-foreground mb-4">
-                    <Icon name="BedDouble" className="h-4 w-4" size={16} />
+                    <Icon name="Bed" className="h-4 w-4" size={16} />
                     <span>{hotel.room}</span>
                   </div>
 
@@ -92,7 +92,7 @@ export function PopularPackages() {
                   <div className="flex flex-wrap gap-2">
                     {hotel.menu.map((item, i) => (
                       <span key={i} className="text-xs px-3 py-1 bg-muted rounded-full flex items-center gap-1">
-                        <Icon name="UtensilsCrossed" className="h-3 w-3" size={12} />
+                        <Icon name="Utensils" className="h-3 w-3" size={12} />
                         {item}
                       </span>
                     ))}
